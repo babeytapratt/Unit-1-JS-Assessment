@@ -5,10 +5,14 @@
 // 👇 COMPLETE YOUR WORK BELOW 👇
 */
 
+// const { films } = require("./data/fixtures-bundle");
+
+// const { films, starships } = require("./data/fixtures-bundle")
+
 /**
  * ### Challenge `getName`
  * Example ✅
- * 
+ *
  * @instructions
  * Must return input object's `name` property.
  *
@@ -19,36 +23,40 @@ function getName(character) {
   return character.name
 }
 
+
 /**
  * ### Challenge `getFilmCount`
  * MVP Challenge 🤓
- * 
+ *
  * @instructions
  * Must return the number of elements in the `films` property.
  *
  * Sample data expected output: 5
  */
-function getFilmCount(character) {
-  // TODO: Add your code inside the functions (others below).
-
+function getFilmCount(character, array) {
+  let counter = 0;
+  for (let i = 0; i <array.length; i ++  ){
+    if (array[i].character === character.name) counter++;
+  }
+  return array.title;
 }
-
+console.log(getFilmCount(lukeSkywalker, films))
 /**
  * ### Challenge `getSecondStarshipName`
  * MVP Challenge 🤓
- * 
+ *
  * @instructions
  * Return second starship's name from `starships` property.
  * If length is 0. Return 'none'
 */
 function getSecondStarshipName(character) {
-  // TODO: Add your code here.
+  return starships.name[2];
 }
 
 /**
  * ### Challenge `getSummary`
  * MVP Challenge 🤓
- * 
+ *
  * @instructions
  * Combine specified field values and return them in the following string format:
  *    Template: `{name}, {height}cm, {mass}kg. Featured in {film count} films.`
@@ -61,7 +69,7 @@ function getSummary(character) {
 /**
  * ### Challenge `getVehiclesCostInCreditsSumTotal`
  * MVP Challenge 🤓
- * 
+ *
  * @instructions
  * Sum the total cost in credits for all vehicles defined on the input character.
  * Sample data expected output: 8000
@@ -73,7 +81,7 @@ function getVehiclesCostInCreditsSumTotal(character) {
 /**
  * ### Challenge `getStarshipPassengerAndCrewSumTotal`
  * MVP Challenge 🤓
- * 
+ *
  * @instructions
  * Sum the number of crew and passenger spots for all starships defined on the
  * input character.
@@ -87,7 +95,7 @@ function getStarshipPassengerAndCrewSumTotal(character) {
 /**
  * ### Challenge `getNthFilm`
  * MVP Challenge 🤓
- * 
+ *
  * @instructions
  * Return the Nth `films` value (in this case title).
  * Rules: filmNumber starts at 1 and refers to the *first* film, and includes only the range 1-3.
@@ -104,7 +112,7 @@ function getNthFilm(character, filmNumber) {
 /**
  * ### Challenge `getCargoCapacityTotal`
  * Stretch Goal 💪
- * 
+ *
  * @instructions
  * Sum the total cargo capacity for *all* vehicles and starships.
  * Some objects may not have a value for their cargo capacity.
@@ -118,7 +126,7 @@ function getCargoCapacityTotal(character) {
 /**
  * ### Challenge `getFastestStarshipName`
  * Stretch Goal 💪
- * 
+ *
  * @instructions
  * Find the fastest starship (by atmospheric speed.)
  * Determine the correct field to compare, and return the name of the fastest.
@@ -133,7 +141,7 @@ function getFastestStarshipName(character) {
 /**
  * ### Challenge `getLargestCargoStarshipModelName`
  * Stretch Goal 💪
- * 
+ *
  * @instructions
  * Determine the starship with the largest cargo capacity.
  * Return it's **_model_** property.
