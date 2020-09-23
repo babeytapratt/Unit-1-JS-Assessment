@@ -5,9 +5,11 @@
 // 👇 COMPLETE YOUR WORK BELOW 👇
 */
 
-// const { films } = require("./data/fixtures-bundle");
 
-// const { films, starships } = require("./data/fixtures-bundle")
+
+
+
+
 
 /**
  * ### Challenge `getName`
@@ -22,7 +24,7 @@ function getName(character) {
   // ⭐️ Example Solution Provided For First Function ⭐️
   return character.name
 }
-
+console.log(lukeSkywalker.films.length)
 
 /**
  * ### Challenge `getFilmCount`
@@ -33,14 +35,10 @@ function getName(character) {
  *
  * Sample data expected output: 5
  */
-function getFilmCount(character, array) {
-  let counter = 0;
-  for (let i = 0; i <array.length; i ++  ){
-    if (array[i].character === character.name) counter++;
-  }
-  return array.title;
+function getFilmCount(character) {
+  return(character.films.length)
 }
-console.log(getFilmCount(lukeSkywalker, films))
+
 /**
  * ### Challenge `getSecondStarshipName`
  * MVP Challenge 🤓
@@ -50,7 +48,7 @@ console.log(getFilmCount(lukeSkywalker, films))
  * If length is 0. Return 'none'
 */
 function getSecondStarshipName(character) {
-  return starships.name[2];
+  return(character.starship[1])
 }
 
 /**
